@@ -78,18 +78,9 @@ function Skills() {
 
                             <div className="skills__list">
                                 {category.skills.map((skill, skillIndex) => (
-                                    <div key={skillIndex} className="skills__item">
-                                        <div className="skills__item-header">
-                                            <span className="skills__item-name">{skill.name}</span>
-                                            <span className="skills__item-level">{skill.level}%</span>
-                                        </div>
-                                        <div className="skills__bar">
-                                            <div
-                                                className="skills__bar-fill"
-                                                style={{ '--skill-level': `${skill.level}%` }}
-                                            ></div>
-                                        </div>
-                                    </div>
+                                    <span key={skillIndex} className="skills__tag">
+                                        {skill}
+                                    </span>
                                 ))}
                             </div>
                         </div>

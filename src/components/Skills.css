@@ -74,56 +74,27 @@
 
 .skills__list {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-5);
+    flex-wrap: wrap;
+    gap: var(--space-3);
 }
 
-.skills__item-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: var(--space-2);
-}
-
-.skills__item-name {
+.skills__tag {
+    display: inline-block;
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.02em;
-}
-
-.skills__item-level {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-muted);
-}
-
-.skills__bar {
-    height: 8px;
+    padding: var(--space-2) var(--space-4);
     background: var(--color-bg-tertiary);
-    border: 2px solid var(--color-border);
-    overflow: hidden;
+    border: var(--border-thin);
+    transition: all var(--transition-fast);
 }
 
-.skills__bar-fill {
-    height: 100%;
-    width: var(--skill-level);
+.skills__tag:hover {
     background: var(--color-primary);
-    transition: width 1s ease-out;
-}
-
-.skills__category.active .skills__bar-fill {
-    animation: fillBar 1s ease-out forwards;
-}
-
-@keyframes fillBar {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: var(--skill-level);
-    }
+    color: white;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {

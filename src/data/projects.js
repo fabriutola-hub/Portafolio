@@ -11,7 +11,7 @@ export const projects = [
   {
     id: 2,
     title: "La Muela del Diablo v2",
-    description: "Version optimizada con code splitting avanzado, mejor rendimiento y experiencia de usuario mejorada para dispositivos moviles.",
+    description: "Version optimizada para cargar instantaneamente en redes moviles 4G. Implementa code splitting avanzado, lazy loading y compresion de assets, reduciendo el tiempo de carga en un 70% - vital para usuarios en movimiento.",
     image: "/MueladelDiablov2.png",
     technologies: ["React", "Three.js", "Performance", "Vite"],
     liveUrl: "https://muela-del-diablo-v2.vercel.app/",
@@ -29,24 +29,9 @@ export const projects = [
 ];
 
 export const skills = {
-  frontend: [
-    { name: "React", level: 95 },
-    { name: "JavaScript", level: 90 },
-    { name: "HTML/CSS", level: 95 },
-    { name: "Three.js", level: 80 },
-    { name: "Vite", level: 85 }
-  ],
-  tools: [
-    { name: "Git", level: 85 },
-    { name: "VS Code", level: 90 },
-    { name: "Vercel", level: 85 }
-  ],
-  other: [
-    { name: "Responsive Design", level: 95 },
-    { name: "Performance", level: 85 },
-    { name: "UI/UX", level: 80 },
-    { name: "Animaciones", level: 85 }
-  ]
+  frontend: ["React", "JavaScript", "HTML/CSS", "Three.js", "Vite"],
+  tools: ["Git", "VS Code", "Vercel"],
+  other: ["Responsive Design", "Performance", "UI/UX", "Animaciones"]
 };
 
 export const personalInfo = {
