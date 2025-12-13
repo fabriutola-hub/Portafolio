@@ -1,0 +1,208 @@
+.contact {
+    position: relative;
+    background: var(--color-bg-primary);
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.contact__label {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-surface);
+    border: var(--border-thin);
+    width: fit-content;
+}
+
+.contact__text {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+}
+
+.contact__detail {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.contact__detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-surface);
+    border: var(--border-thin);
+    color: var(--color-primary);
+}
+
+.contact__detail>div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.contact__detail-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.contact__detail-value {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* WhatsApp button - neobrutalist style */
+.contact__detail--whatsapp {
+    text-decoration: none;
+    padding: var(--space-3) var(--space-4);
+    background: #25D366;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.contact__detail--whatsapp:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact__detail--whatsapp .contact__detail-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.contact__detail--whatsapp .contact__detail-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact__detail--whatsapp .contact__detail-value {
+    color: white;
+}
+
+.contact__form {
+    background: var(--color-surface);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.contact__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.contact__form-label {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+}
+
+.contact__form-input {
+    padding: var(--space-4);
+    background: var(--color-bg-primary);
+    border: var(--border-thin);
+    font-family: inherit;
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.contact__form-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.contact__form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 3px 3px 0 var(--color-primary);
+}
+
+.contact__form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact__submit {
+    width: 100%;
+    padding: var(--space-4);
+    margin-top: var(--space-2);
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.contact__submit:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact__submit:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .contact__info {
+        text-align: center;
+    }
+
+    .contact__label {
+        margin: 0 auto;
+    }
+
+    .contact__details {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact__form {
+        padding: var(--space-6);
+    }
+}
