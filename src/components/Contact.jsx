@@ -70,8 +70,6 @@ function Contact() {
                         <div className="contact__details">
                             <span className="detail-label">Ubicación</span>
                             <span className="detail-value">{personalInfo.location}</span>
-                            <span className="detail-label">Email</span>
-                            <span className="detail-value">luisfabrizio@example.com</span>
                         </div>
                     </div>
 
