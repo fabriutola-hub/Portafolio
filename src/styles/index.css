@@ -1,48 +1,34 @@
-/* ========================================
-   DESIGN SYSTEM - Minimalist Neobrutalist
-   Palette: White + Blue (#0066FF)
-   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap');
 
-/* CSS Variables */
 :root {
-  /* Colors - Neobrutalist Palette */
-  --color-bg-primary: #FAFAFA;
-  --color-bg-secondary: #FFFFFF;
-  --color-bg-tertiary: #F0F0F0;
-  --color-surface: #FFFFFF;
-  --color-surface-hover: #F5F5F5;
-  --color-border: #1A1A1A;
-  --color-border-light: #E0E0E0;
+  /* ═══════════════════════════════════════════════════════════════════
+       ORGANIC LUXURY COLOR PALETTE - REFINED
+       ═══════════════════════════════════════════════════════════════════ */
+  --color-bg-primary: #F2EFE9;
+  /* Warm Stone */
+  --color-bg-secondary: #EAE6DD;
+  /* Darker Stone */
 
-  --color-primary: #0066FF;
-  --color-primary-light: #3385FF;
-  --color-primary-dark: #0052CC;
-  --color-secondary: #1A1A1A;
-  --color-accent: #0066FF;
-
-  --color-text-primary: #1A1A1A;
+  --color-text-primary: #1C1C1E;
+  /* Soft Black */
   --color-text-secondary: #4A4A4A;
-  --color-text-muted: #6B6B6B;
-  --color-text-inverse: #FFFFFF;
+  --color-text-tertiary: #8E8E93;
 
-  /* Neobrutalist - No gradients, solid colors */
-  --gradient-primary: #0066FF;
+  --color-forest: #1A3C2F;
+  /* Deep Green */
+  --color-terracotta: #A65E3C;
+  /* Burnt Orange */
+  --color-cream: #FAF8F3;
 
-  /* Typography */
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --color-border: rgba(26, 60, 47, 0.08);
+  /* Much softer borders */
+  --color-border-strong: rgba(26, 60, 47, 0.2);
 
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
-  --text-7xl: 4.5rem;
+  /* ═══════════════════════════════════════════════════════════════════
+       TYPOGRAPHY - EDITORIAL SCALE
+       ═══════════════════════════════════════════════════════════════════ */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -57,34 +43,34 @@
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
+  --space-32: 8rem;
 
-  /* Border Radius - Minimal for brutalist look */
-  --radius-sm: 0;
-  --radius-md: 4px;
-  --radius-lg: 4px;
-  --radius-xl: 8px;
-  --radius-2xl: 8px;
-  --radius-full: 9999px;
+  /* Text Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+  --text-7xl: 6rem;
 
-  /* Neobrutalist Borders */
-  --border-thin: 2px solid var(--color-border);
-  --border-thick: 3px solid var(--color-border);
-  --border-accent: 3px solid var(--color-primary);
-
-  /* Hard Shadows - Neobrutalist signature */
-  --shadow-sm: 3px 3px 0 var(--color-border);
-  --shadow-md: 5px 5px 0 var(--color-border);
-  --shadow-lg: 8px 8px 0 var(--color-border);
-  --shadow-xl: 12px 12px 0 var(--color-border);
-  --shadow-accent: 5px 5px 0 var(--color-primary);
+  /* Shadows */
+  --shadow-stone: 10px 10px 20px -5px rgba(26, 60, 47, 0.1);
+  --shadow-hover: 15px 15px 30px -5px rgba(166, 94, 60, 0.15);
 
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Reset & Base */
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL RESET
+   ═══════════════════════════════════════════════════════════════════════════ */
 *,
 *::before,
 *::after {
@@ -95,7 +81,9 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  cursor: auto
+    /* Reverting to default cursor for cleaner feel, custom cursor can feel 'gamey' */
+  ;
 }
 
 body {
@@ -103,189 +91,129 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-text-primary);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-/* Utility Classes */
-.container {
+/* ═══════════════════════════════════════════════════════════════════════════
+   TEXTURE - RICE PAPER GRAIN
+   ═══════════════════════════════════════════════════════════════════════════ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1200px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  /* Very subtle */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+.container {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--space-6);
 }
 
-.section {
-  padding: var(--space-24) 0;
+.text-italic {
+  font-style: italic;
 }
 
-.section-title {
-  font-size: var(--text-4xl);
-  font-weight: 800;
-  margin-bottom: var(--space-4);
+.text-terracotta {
+  color: var(--color-terracotta);
+}
+
+/* TORN EDGE - REFINED */
+.torn-clip {
+  clip-path: polygon(0% 0%, 100% 0%,
+      100% calc(100% - 2px),
+      98% calc(100% - 5px),
+      96% calc(100% - 2px),
+      94% calc(100% - 6px),
+      92% calc(100% - 3px),
+      90% calc(100% - 7px),
+      88% calc(100% - 4px),
+      86% calc(100% - 6px),
+      84% calc(100% - 3px),
+      82% calc(100% - 7px),
+      80% calc(100% - 4px),
+      78% calc(100% - 6px),
+      76% calc(100% - 3px),
+      74% calc(100% - 7px),
+      72% calc(100% - 4px),
+      70% calc(100% - 6px),
+      68% calc(100% - 3px),
+      66% calc(100% - 7px),
+      64% calc(100% - 4px),
+      62% calc(100% - 6px),
+      60% calc(100% - 3px),
+      58% calc(100% - 7px),
+      56% calc(100% - 4px),
+      54% calc(100% - 6px),
+      52% calc(100% - 3px),
+      50% calc(100% - 7px),
+      48% calc(100% - 4px),
+      46% calc(100% - 6px),
+      44% calc(100% - 3px),
+      42% calc(100% - 7px),
+      40% calc(100% - 4px),
+      38% calc(100% - 6px),
+      36% calc(100% - 3px),
+      34% calc(100% - 7px),
+      32% calc(100% - 4px),
+      30% calc(100% - 6px),
+      28% calc(100% - 3px),
+      26% calc(100% - 7px),
+      24% calc(100% - 4px),
+      22% calc(100% - 6px),
+      20% calc(100% - 3px),
+      18% calc(100% - 7px),
+      16% calc(100% - 4px),
+      14% calc(100% - 6px),
+      12% calc(100% - 3px),
+      10% calc(100% - 7px),
+      8% calc(100% - 4px),
+      6% calc(100% - 6px),
+      4% calc(100% - 3px),
+      2% calc(100% - 5px),
+      0% calc(100% - 2px));
+}
+
+/* STONE BUTTON - REFINED */
+.btn-stone {
+  display: inline-block;
+  padding: var(--space-3) var(--space-8);
+  background: var(--color-bg-secondary);
   color: var(--color-text-primary);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-}
-
-.section-subtitle {
-  font-size: var(--text-lg);
-  color: var(--color-text-secondary);
-  max-width: 600px;
-}
-
-/* Neobrutalist Card Base */
-.neo-card {
-  background: var(--color-surface);
-  border: var(--border-thick);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-fast);
-}
-
-.neo-card:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Buttons - Neobrutalist Style */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: var(--border-thick);
-  transition: all var(--transition-fast);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border: 1px solid var(--color-border-strong);
+  transition: all var(--transition-base);
 }
 
-.btn-primary {
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-md);
+.btn-stone:hover {
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+  border-color: var(--color-terracotta);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
-.btn-primary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.btn-primary:active {
-  transform: translate(2px, 2px);
-  box-shadow: none;
-}
-
-.btn-secondary {
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-secondary:hover {
-  background: var(--color-bg-tertiary);
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Animations - Minimal for brutalist feel */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.4s ease forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.3s ease forwards;
-}
-
-/* Stagger delays */
-.delay-100 {
-  animation-delay: 100ms;
-}
-
-.delay-200 {
-  animation-delay: 200ms;
-}
-
-.delay-300 {
-  animation-delay: 300ms;
-}
-
-.delay-400 {
-  animation-delay: 400ms;
-}
-
-.delay-500 {
-  animation-delay: 500ms;
-}
-
-/* Scroll reveal */
+/* Reveal Animation Class */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -293,49 +221,19 @@ ol {
   transform: translateY(0);
 }
 
-/* Accent highlight */
-.highlight {
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
-  padding: 0 var(--space-2);
+.reveal-delay-1 {
+  transition-delay: 0.1s;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  :root {
-    --text-7xl: 3.5rem;
-    --text-6xl: 3rem;
-    --text-5xl: 2.5rem;
-  }
-
-  .section {
-    padding: var(--space-16) 0;
-  }
+.reveal-delay-2 {
+  transition-delay: 0.2s;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --text-7xl: 2.75rem;
-    --text-6xl: 2.25rem;
-    --text-5xl: 2rem;
-    --text-4xl: 1.75rem;
-    --shadow-md: 4px 4px 0 var(--color-border);
-    --shadow-lg: 6px 6px 0 var(--color-border);
-  }
-
-  .container {
-    padding: 0 var(--space-4);
-  }
-
-  .section {
-    padding: var(--space-12) 0;
-  }
+.reveal-delay-3 {
+  transition-delay: 0.3s;
 }
 
-@media (max-width: 480px) {
-  :root {
-    --text-7xl: 2.25rem;
-    --text-6xl: 2rem;
-    --text-5xl: 1.75rem;
-  }
+/* Section Spacing */
+.section {
+  padding: var(--space-32) 0;
 }

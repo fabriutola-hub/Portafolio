@@ -1,30 +1,39 @@
 export const projects = [
   {
     id: 1,
-    title: "La Muela del Diablo",
-    description: "Experiencia inmersiva 360 de un sitio arqueologico en La Paz, Bolivia. Incluye visualizacion 3D interactiva, mapas y recorridos virtuales.",
-    image: "/muela del diablo.png",
-    technologies: ["React", "Three.js", "Mapbox", "Vite"],
-    liveUrl: "https://mi-proyecto-pe-xd-8sv6.vercel.app/",
+    title: "Salar de Uyuni",
+    description: "Una travesía digital por el espejo del mundo. Sitio web turístico inmersivo con galerías fotográficas de alto impacto y guías de viaje interactivas para el destino más icónico de Bolivia.",
+    image: "/SalardeUyuni.png",
+    technologies: ["React", "Framer Motion", "Tailwind"],
+    demo: "https://salar-de-uyuni.vercel.app/",
     featured: true
   },
   {
     id: 2,
-    title: "La Muela del Diablo v2",
-    description: "Version optimizada para cargar instantaneamente en redes moviles 4G. Implementa code splitting avanzado, lazy loading y compresion de assets, reduciendo el tiempo de carga en un 70% - vital para usuarios en movimiento.",
-    image: "/MueladelDiablov2.png",
-    technologies: ["React", "Three.js", "Performance", "Vite"],
-    liveUrl: "https://muela-del-diablo-v2.vercel.app/",
+    title: "Toro Toro National Park",
+    description: "Exploración paleontológica y espeleológica. Plataforma web para el parque nacional, destacando sus huellas de dinosaurios y cavernas con un diseño 'geo-brutalista' y texturas orgánicas.",
+    image: "/ToroToro.png",
+    technologies: ["React", "Three.js", "Vite"],
+    demo: "https://toro-toro-ten.vercel.app/",
     featured: true
   },
   {
     id: 3,
-    title: "La Casa del Tanuki",
-    description: "Sitio web elegante para restaurante de ramen japones autentico. Diseno moderno con animaciones fluidas y enfoque en la experiencia gastronomica.",
-    image: "/LaCasadelTanuki.png",
-    technologies: ["React", "CSS", "Animaciones", "Vite"],
-    liveUrl: "https://la-casa-del-tanuki.vercel.app/",
+    title: "Centro Estético Kappa",
+    description: "Belleza y bienestar en armonía digital. SPA y centro estético con un diseño minimalista y presentación elegante de servicios.",
+    image: "/Dermanova-clinic.png",
+    technologies: ["Next.js", "UI/UX"],
+    demo: "https://centro-estetico-kappa.vercel.app/",
     featured: true
+  },
+  {
+    id: 4,
+    title: "La Muela del Diablo",
+    description: "Experiencia inmersiva 360 de un sitio arqueológico en La Paz. Visualización 3D interactiva, mapas y recorridos virtuales para preservar el patrimonio cultural.",
+    image: "/muela del diablo.png",
+    technologies: ["React", "Three.js", "Mapbox"],
+    liveUrl: "https://mi-proyecto-pe-xd-8sv6.vercel.app/",
+    featured: false
   }
 ];
 
@@ -39,5 +48,6 @@ export const personalInfo = {
   title: "Frontend Developer",
   age: 20,
   location: "Bolivia",
-  bio: "Desarrollador frontend apasionado por crear experiencias web inmersivas y elegantes. Especializado en React, Three.js y animaciones web modernas."
+  whatsapp: "+591 75843980",
+  bio: "Estudiante de Ingeniería de Sistemas en su último año. 20 años. Apasionado por el desarrollo frontend y el diseño UI/UX."
 };

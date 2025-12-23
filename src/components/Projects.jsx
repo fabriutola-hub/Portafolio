@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { projects } from '../data/projects';
-import ProjectCard from './ProjectCard';
 import './Projects.css';
 
 function Projects() {
@@ -18,8 +17,8 @@ function Projects() {
             { threshold: 0.1 }
         );
 
-        const elements = sectionRef.current?.querySelectorAll('.reveal');
-        elements?.forEach((el) => observer.observe(el));
+        const lines = sectionRef.current?.querySelectorAll('.project-line');
+        lines?.forEach((el) => observer.observe(el));
 
         return () => observer.disconnect();
     }, []);
@@ -28,22 +27,62 @@ function Projects() {
         <section id="projects" className="projects section" ref={sectionRef}>
             <div className="container">
                 <div className="projects__header">
-                    <span className="projects__label reveal">Portafolio</span>
-                    <h2 className="section-title reveal">Proyectos Destacados</h2>
-                    <p className="section-subtitle reveal">
-                        Una seleccion de mis trabajos mas recientes en desarrollo frontend
-                    </p>
+                    <span className="section-label">02 — Portafolio Seleccionado</span>
+                    <h2 className="projects__main-title">
+                        Galería <span className="text-italic text-terracotta">Digital</span>
+                    </h2>
                 </div>
 
-                <div className="projects__grid">
+                <div className="projects__list">
                     {projects.map((project, index) => (
-                        <div
-                            key={project.id}
-                            className="reveal"
-                            style={{ transitionDelay: `${index * 100}ms` }}
-                        >
-                            <ProjectCard project={project} />
-                        </div>
+                        <article key={project.id} className="project-line">
+                            <div className="project-line__content">
+                                <div className="project-line__meta">
+                                    <span className="project-line__number">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <h3 className="project-line__title">
+                                        {project.title}
+                                    </h3>
+                                </div>
+                                <p className="project-line__desc">
+                                    {project.description}
+                                </p>
+                                <div className="project-line__tech">
+                                    {project.technologies.slice(0, 3).map(tech => (
+                                        <span key={tech}>{tech}</span>
+                                    ))}
+                                </div>
+                                <div className="project-line__action">
+                                    <a
+                                        href={project.demo || project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-stone"
+                                    >
+                                        Visitar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <a
+                                href={project.demo || project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="project-line__visual torn-clip"
+                            >
+                                <div className="project-line__image-wrapper">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        loading="lazy"
+                                    />
+                                    <div className="project-line__overlay">
+                                        <span>Ver Proyecto</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
                     ))}
                 </div>
             </div>

@@ -5,11 +5,13 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Cursor from './components/Cursor';
 import './styles/index.css';
 
 function App() {
   return (
     <>
+      <Cursor />
       <Navbar />
       <main>
         <Hero />

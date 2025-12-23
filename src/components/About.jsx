@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { personalInfo } from '../data/projects';
 import './About.css';
 
 function About() {
@@ -14,7 +13,7 @@ function About() {
                     }
                 });
             },
-            { threshold: 0.2 }
+            { threshold: 0.15 }
         );
 
         const elements = sectionRef.current?.querySelectorAll('.reveal');
@@ -23,55 +22,54 @@ function About() {
         return () => observer.disconnect();
     }, []);
 
-    const stats = [
-        { value: '3+', label: 'Proyectos' },
-        { value: '1+', label: 'Años Exp.' },
-        { value: '100%', label: 'Dedicacion' }
-    ];
-
     return (
         <section id="about" className="about section" ref={sectionRef}>
-            <div className="container">
-                <div className="about__grid">
-                    <div className="about__image reveal">
-                        <div className="about__image-wrapper">
-                            <div className="about__image-placeholder">
-                                <span className="about__initials">LF</span>
-                            </div>
-                            <div className="about__image-decoration"></div>
+            <div className="container about__layout">
+                {/* 1. Header Centered */}
+                <div className="about__header reveal">
+                    <span className="section-label">01 — Perfil</span>
+                    <h2 className="about__headline">
+                        Ingeniería <span className="text-italic text-terracotta">&</span> <br />
+                        Creatividad Digital.
+                    </h2>
+                </div>
+
+                {/* 2. Structured Split Grid */}
+                <div className="about__content">
+                    {/* Left: Controlled Image */}
+                    <div className="about__image-container reveal reveal-delay-1">
+                        <div className="about__image-frame torn-clip">
+                            <img
+                                src="/Foto.jpg"
+                                alt="Luis Fabrizio"
+                                className="about__img"
+                            />
                         </div>
                     </div>
 
-                    <div className="about__content">
-                        <span className="about__label reveal">Sobre Mi</span>
-                        <h2 className="section-title reveal">
-                            Creando experiencias digitales unicas
-                        </h2>
+                    {/* Right: Clean Typography */}
+                    <div className="about__info reveal reveal-delay-2">
+                        <div className="about__bio">
+                            <p className="about__lead">
+                                Soy <strong>Luis Fabrizio</strong>, desarrollador de 20 años y estudiante de último año de <strong>Ingeniería de Sistemas</strong>.
+                            </p>
+                            <p className="about__text">
+                                Mi enfoque combina la lógica estructurada de la ingeniería con una sensibilidad visual refinada.
+                                No me limito a escribir código; busco la arquitectura detrás de la emoción.
+                                Creo firmemente que la web moderna necesita menos ruido y más señal.
+                            </p>
+                        </div>
 
-                        <p className="about__text reveal">
-                            Soy <strong>{personalInfo.name}</strong>, un desarrollador frontend de{' '}
-                            <strong>{personalInfo.age} años</strong> apasionado por transformar ideas en
-                            experiencias web interactivas y memorables.
-                        </p>
-
-                        <p className="about__text reveal">
-                            Me especializo en <strong>React</strong> y tecnologias modernas como{' '}
-                            <strong>Three.js</strong> para crear experiencias inmersivas. Mi enfoque
-                            combina diseno elegante con codigo limpio y optimizado.
-                        </p>
-
-                        <p className="about__text reveal">
-                            Cada proyecto es una oportunidad para superar limites y entregar
-                            soluciones que no solo funcionan, sino que impresionan.
-                        </p>
-
-                        <div className="about__stats reveal">
-                            {stats.map((stat, index) => (
-                                <div key={index} className="about__stat">
-                                    <span className="about__stat-value">{stat.value}</span>
-                                    <span className="about__stat-label">{stat.label}</span>
-                                </div>
-                            ))}
+                        {/* Structured Stats */}
+                        <div className="about__stats-grid">
+                            <div className="stat-item">
+                                <span className="stat-num">20</span>
+                                <span className="stat-label">Años</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-num">4+</span>
+                                <span className="stat-label">Proyectos</span>
+                            </div>
                         </div>
                     </div>
                 </div>
